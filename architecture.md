@@ -227,79 +227,59 @@ Using Provider pattern with ChangeNotifier:
 
 ## Sprint 1 User Flows
 
-### 1. User Accounts and Profile
-**Target Users**: All users (Customers and Admins)
+### 1. User Accounts & Profile
 
-1. **App Launch**: User opens the app
-2. **Authentication Check**: App checks if user is logged in
-3. **Login/Register Prompt**: If not logged in, display login screen with options for email/password or social login
-4. **Registration Flow**:
-   - User taps "Create Account"
-   - Enters name, email, password
-   - Agrees to terms and conditions
-   - Verifies email (optional)
-   - Account created, auto-login
-5. **Login Flow**:
-   - User enters email and password
-   - Taps "Login"
-   - If successful, navigate to home
-   - If failed, show error message
-6. **Profile Access**:
-   - From home screen, access profile via bottom navigation or drawer
-   - View/edit personal details (name, email, phone, address)
-   - Change password option
-   - Logout option
+**Customer Flow:**
+1. Open app → see onboarding (brand identity)
+2. Tap Sign Up → enter name, email, password, address → confirm
+3. System validates inputs → account created → auto-login
+4. User can log in next time with email + password
+5. From profile screen → update info (name, address, password)
+6. Save changes → success message shown
 
-### 2. Onboarding Screen
-**Target Users**: New users (Customers)
+**Admin Flow:**
+1. Open app → tap Admin Login
+2. Enter email + password → verify against admin role
+3. Redirected to Admin Dashboard
 
-1. **First Launch Detection**: App detects first-time user (no stored preference)
-2. **Onboarding Start**: Display first slide with brand introduction
-3. **Slide Navigation**:
-   - User can swipe through 3-4 slides
-   - Each slide shows fashion images and key app features
-   - Skip button available on each slide
-4. **Completion**: User taps "Get Started" on last slide
-5. **Preference Storage**: Mark onboarding as completed
-6. **Navigation**: Redirect to home screen
+### 2. Product Catalog
 
-### 3. Home Screen
-**Target Users**: All users (Customers and Admins)
+**Customer Flow:**
+1. From home screen → see banners (new arrivals, featured items)
+2. Tap "Shop Now" → go to product catalog
+3. Browse products (grid/list view with images, name, price)
+4. Tap a product → view detailed info (description, price, stock, images)
+5. Choose to add to cart, add to wishlist, or go back
 
-1. **Screen Load**: Display after login/onboarding
-2. **Banner Section**: Auto-playing carousel of featured/new arrival banners
-3. **Category Grid**: Grid of fashion categories (Streetwear, Minimalist, etc.)
-4. **Featured Products**: Horizontal scrollable list of featured items
-5. **Navigation Elements**:
-   - Bottom navigation bar (Home, Catalog, Wishlist, Profile)
-   - Search bar at top
-   - Cart icon with badge (if items exist)
-6. **Interactions**:
-   - Tap banner → Navigate to related product/category
-   - Tap category → Filter catalog by category
-   - Tap featured product → Open product details
-   - Tap search → Open search screen
-   - Tap bottom nav items → Switch screens
+**Admin Flow:**
+1. Log in → dashboard → product management
+2. View catalog list with stock count and product details
 
-### 4. Product Catalog
-**Target Users**: All users (Customers and Admins)
+### 3. Wishlist
 
-1. **Access**: From home screen via bottom navigation or category tap
-2. **Initial View**: Display products in grid layout (default)
-3. **Search Functionality**:
-   - Tap search bar
-   - Enter keywords
-   - Real-time filtering of results
-4. **Filtering Options**:
-   - Tap filter button
-   - Select category, price range, size
-   - Apply filters
-5. **View Toggle**: Switch between grid and list view
-6. **Product Interaction**:
-   - Tap product card → Open product details
-   - Scroll for pagination (load more products)
-7. **Sorting**: Sort by popularity, price, newest
-8. **Back Navigation**: Return to home or previous screen
+**Customer Flow:**
+1. While browsing catalog → tap heart icon on product
+2. Product saved into Wishlist
+3. Go to Wishlist screen → view saved items
+4. Tap product → open product details, option to Add to Cart
+5. Tap Remove → item deleted from Wishlist
+
+*(Admin has no Wishlist flow in Sprint 1.)*
+
+### 4. Secure Checkout (Cash on Delivery in Sprint 1)
+
+**Customer Flow:**
+1. From catalog or wishlist → add product to cart
+2. Open Cart → review items, quantities, and total price
+3. Tap Checkout → confirm delivery address
+4. Select payment method (COD first, later GCash/PayPal)
+5. Tap Place Order → order saved in system
+6. Confirmation screen → "Your order has been placed"
+7. Order appears in Order History (basic tracking)
+
+**Admin Flow (partial in Sprint 1):**
+1. Log in → dashboard → view incoming orders
+2. See order details (customer, items, total, address, payment method)
 
 ## Implementation Phases
 1. **Phase 1**: Project setup, authentication, basic navigation
