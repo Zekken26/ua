@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "566036891809",
+    "project_id": "underground-apparel-project",
+    "storage_bucket": "underground-apparel-project.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:566036891809:android:1a586dcce6cf93662dc8e0",
+        "android_client_info": {
+          "package_name": "com.example.ua"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCRtbDhsl4fwgHJcdJLlBMaLpIVEB_YcdU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
